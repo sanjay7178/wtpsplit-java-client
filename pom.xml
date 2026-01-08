@@ -121,14 +121,11 @@
                 </executions>
             </plugin>
             
-            <!-- Exec plugin -->
+            <!-- Exec plugin - use -Dexec.mainClass to specify which class to run -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.2.0</version>
-                <configuration>
-                    <mainClass>com.wtpsplit.triton.WtpSplitDemo</mainClass>
-                </configuration>
             </plugin>
         </plugins>
     </build>
