@@ -1,0 +1,8 @@
+/home/ec2-user/wtpsplit-java-client/src/main/java/com/wtpsplit/triton/TritonClient.java
+/home/ec2-user/wtpsplit-java-client/src/main/java/com/wtpsplit/triton/WtpSplit.java
+/home/ec2-user/wtpsplit-java-client/src/main/java/com/wtpsplit/triton/WtpSplitDemo.java
+/home/ec2-user/wtpsplit-java-client/target/generated-sources/protobuf/grpc-java/grpc/health/v1/HealthGrpc.java
+/home/ec2-user/wtpsplit-java-client/target/generated-sources/protobuf/grpc-java/inference/GRPCInferenceServiceGrpc.java
+/home/ec2-user/wtpsplit-java-client/target/generated-sources/protobuf/java/grpc/health/v1/HealthOuterClass.java
+/home/ec2-user/wtpsplit-java-client/target/generated-sources/protobuf/java/inference/GrpcService.java
+/home/ec2-user/wtpsplit-java-client/target/generated-sources/protobuf/java/inference/ModelConfigOuterClass.java
