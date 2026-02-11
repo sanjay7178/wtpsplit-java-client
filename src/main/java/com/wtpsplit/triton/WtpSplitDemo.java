@@ -15,9 +15,9 @@ import java.util.List;
 public class WtpSplitDemo {
     
     public static void main(String[] args) {
-        String host = args.length > 0 ? args[0] : "localhost";
+        String host = args.length > 0 ? args[0] : "ec2-3-16-149-64.us-east-2.compute.amazonaws.com";
         int grpcPort = args.length > 1 ? Integer.parseInt(args[1]) : 8085;
-        String modelName = args.length > 2 ? args[2] : "sat_3l_sm";
+        String modelName = args.length > 2 ? args[2] : "sat_model";
         
         printHeader(host, grpcPort, modelName);
         

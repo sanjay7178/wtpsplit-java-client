@@ -63,12 +63,12 @@ public class TritonClient implements Closeable {
             .setModelName(modelName)
             .addInputs(ModelInferRequest.InferInputTensor.newBuilder()
                 .setName("input_ids")
-                .setDatatype("INT32")
+                .setDatatype("INT64")
                 .addShape(1)
                 .addShape(seqLen))
             .addInputs(ModelInferRequest.InferInputTensor.newBuilder()
                 .setName("attention_mask")
-                .setDatatype("INT32")
+                .setDatatype("INT64")
                 .addShape(1)
                 .addShape(seqLen))
             .addOutputs(ModelInferRequest.InferRequestedOutputTensor.newBuilder()
@@ -101,8 +101,10 @@ public class TritonClient implements Closeable {
     }
     
     private byte[] toBytes(int[] arr) {
-        ByteBuffer buf = ByteBuffer.allocate(arr.length * 4).order(ByteOrder.LITTLE_ENDIAN);
-        for (int v : arr) buf.putInt(v);
+        // Previously this serialized 4-byte ints (INT32) which caused a mismatch when the model
+        // expects INT64. Serialize as 8-byte little-endian longs to match "INT64" datatype.
+        ByteBuffer buf = ByteBuffer.allocate(arr.length * 8).order(ByteOrder.LITTLE_ENDIAN);
+        for (int v : arr) buf.putLong((long) v);
         return buf.array();
     }
     
